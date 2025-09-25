@@ -46,13 +46,13 @@ function initMap() {
         },
         {
             name: "Field B (Noida)",
-            position: { lat: 28.5735, lng: 77.3255 },
+            position: { lat: 28.6129, lng: 77.2295 },
             status: "moderate",
             data: { moisture: "55%", ph: "6.8", nitrogen: "60%" }
         },
         {
             name: "Field C (Noida)",
-            position: { lat: 28.5710, lng: 77.3260 },
+            position: { lat: 28.5739, lng: 77.3389 },
             status: "critical",
             data: { moisture: "40%", ph: "7.5", nitrogen: "45%" }
         }
