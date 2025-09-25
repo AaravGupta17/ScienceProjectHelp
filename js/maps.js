@@ -2,8 +2,8 @@
 function initMap() {
     // Map options - centered on India
     const mapOptions = {
-        center: { lat: 28.5723, lng: 77.3239 },
-        zoom: 15,
+        center: { lat: 20.5937, lng: 78.9629 },
+        zoom: 5,
         styles: [
             {
                 featureType: "administrative",
@@ -45,14 +45,14 @@ function initMap() {
             data: { moisture: "65%", ph: "7.1", nitrogen: "75%" }
         },
         {
-            name: "Field B (Noida)",
-            position: { lat: 28.6129, lng: 77.2295 },
+            name: "Field B (Ludhiana)",
+            position: { lat: 30.9010, lng: 75.8573 },
             status: "moderate",
             data: { moisture: "55%", ph: "6.8", nitrogen: "60%" }
         },
         {
-            name: "Field C (Noida)",
-            position: { lat: 28.5739, lng: 77.3389 },
+            name: "Field C (Indore)",
+            position: { lat: 22.7196, lng: 75.8577 },
             status: "critical",
             data: { moisture: "40%", ph: "7.5", nitrogen: "45%" }
         }
@@ -66,26 +66,26 @@ function initMap() {
         let polygonColor;
         switch (field.status) {
             case "optimal":
-                polygonColor = "#2B9348";
+                polygonColor = "#606d42";
                 break;
             case "moderate":
-                polygonColor = "#FF9E1B";
+                polygonColor = "#ba9642";
                 break;
             case "critical":
                 polygonColor = "#D62828";
                 break;
             default:
-                polygonColor = "#2B9348";
+                polygonColor = "#606d42";
         }
 
         // NOTE: The polygon is a simple square because the sample data only provides a center point.
         // For real-world applications, you would use a service to get actual field boundaries.
         // Define the bounds for the polygon
         const polygonPath = [
-            { lat: field.position.lat + 0.01, lng: field.position.lng - 0.01 },
-            { lat: field.position.lat + 0.01, lng: field.position.lng + 0.01 },
-            { lat: field.position.lat - 0.01, lng: field.position.lng + 0.01 },
-            { lat: field.position.lat - 0.01, lng: field.position.lng - 0.01 },
+            { lat: field.position.lat + 0.0005, lng: field.position.lng - 0.0005 },
+            { lat: field.position.lat + 0.0005, lng: field.position.lng + 0.0005 },
+            { lat: field.position.lat - 0.0005, lng: field.position.lng + 0.0005 },
+            { lat: field.position.lat - 0.0005, lng: field.position.lng - 0.0005 },
         ];
 
         // Create the polygon
@@ -106,11 +106,11 @@ function initMap() {
         const contentString = `
             <div class="p-3">
                 <h3 class="font-bold text-lg mb-2">${field.name}</h3>
-                <p class="mb-1"><span class="font-medium">Status:</span> <span class="${field.status === 'optimal' ? 'text-green-600' : field.status === 'moderate' ? 'text-yellow-600' : 'text-red-600'}">${field.status.charAt(0).toUpperCase() + field.status.slice(1)}</span></p>
+                <p class="mb-1"><span class="font-medium">Status:</span> <span style="color: ${polygonColor};">${field.status.charAt(0).toUpperCase() + field.status.slice(1)}</span></p>
                 <p class="mb-1"><span class="font-medium">Moisture:</span> ${field.data.moisture}</p>
                 <p class="mb-1"><span class="font-medium">pH Level:</span> ${field.data.ph}</p>
                 <p class="mb-1"><span class="font-medium">Nitrogen:</span> ${field.data.nitrogen}</p>
-                <button class="mt-2 bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm" onclick="document.getElementById('field-reports-division').scrollIntoView({ behavior: 'smooth' });">View Details</button>
+                <button class="btn mt-2 px-3 py-1 rounded text-sm" onclick="document.getElementById('field-reports-division').scrollIntoView({ behavior: 'smooth' });">View Details</button>
             </div>
         `;
 
