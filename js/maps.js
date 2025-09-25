@@ -66,13 +66,13 @@ function initMap() {
         let polygonColor;
         switch (field.status) {
             case "optimal":
-                polygonColor = "#606d42";
+                polygonColor = "##FFCCCB";
                 break;
             case "moderate":
-                polygonColor = "#ba9642";
+                polygonColor = "#FFFFC5";
                 break;
             case "critical":
-                polygonColor = "#D62828";
+                polygonColor = "#00FF00";
                 break;
             default:
                 polygonColor = "#606d42";
