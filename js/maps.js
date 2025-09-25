@@ -1,9 +1,9 @@
 // Initialize Google Map
 function initMap() {
-    // Map options - centered on India
+    // Map options - centered on Noida Sector 12
     const mapOptions = {
-        center: { lat: 20.5937, lng: 78.9629 },
-        zoom: 5,
+        center: { lat: 28.595, lng: 77.36 },
+        zoom: 14,
         styles: [
             {
                 featureType: "administrative",
@@ -36,25 +36,25 @@ function initMap() {
     // Create map
     const map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-    // Sample field data
+    // Sample field data for Noida Sector 12
     const fields = [
         {
-            name: "Field A (Noida)",
-            position: { lat: 28.5720, lng: 77.3230 },
+            name: "North Field (Sec 12)",
+            position: { lat: 28.598, lng: 77.362 },
             status: "optimal",
-            data: { moisture: "65%", ph: "7.1", nitrogen: "75%" }
+            data: { moisture: "65%", ph: "7.2", nitrogen: "75%" }
         },
         {
-            name: "Field B (Ludhiana)",
-            position: { lat: 30.9010, lng: 75.8573 },
+            name: "South Field (Sec 12)",
+            position: { lat: 28.592, lng: 77.358 },
             status: "moderate",
-            data: { moisture: "55%", ph: "6.8", nitrogen: "60%" }
+            data: { moisture: "50%", ph: "7.0", nitrogen: "85%" }
         },
         {
-            name: "Field C (Indore)",
-            position: { lat: 22.7196, lng: 75.8577 },
-            status: "critical",
-            data: { moisture: "40%", ph: "7.5", nitrogen: "45%" }
+            name: "East Field (Sec 12)",
+            position: { lat: 28.595, lng: 77.365 },
+            status: "optimal",
+            data: { moisture: "60%", ph: "7.1", nitrogen: "80%" }
         }
     ];
 
